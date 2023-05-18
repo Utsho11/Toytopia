@@ -24,6 +24,7 @@ const NavigationBar = () => {
                     <li><Link to="">My Toys</Link></li>
                     <li><Link to="">Add Toys</Link></li>
                     <li><Link to="">Blogs</Link></li>
+                    <li><Link to="/signIn">SignIn</Link></li>
                 </ul>
             </div>
             <div className="navbar-end">
