@@ -19,17 +19,15 @@ const SignIn = () => {
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
-                <input type="text" placeholder="Enter email" className="input input-bordered bg-transparent" />
+                <input type="text" name='email' placeholder="Enter email" className="input input-bordered bg-transparent" />
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                {
-                    show ?
-                    <input type="text" placeholder="Enter password" className="input input-bordered bg-transparent" />
-                    : <input type="password" placeholder="Enter password" className="input input-bordered bg-transparent" />
-                }
+            
+                    <input type={show ? "text" : "password"} name='password' placeholder="Enter password" className="input input-bordered bg-transparent" />
+
                 <label className="label">
                     <p>
                   <input onClick={handleShowPass} type="checkbox" name="show-password" id="" /> <span className="label-text my-auto">Show password</span>
