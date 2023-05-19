@@ -23,10 +23,10 @@ const NavigationBar = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/allToys">All Toys</Link></li>
-                        {user ? <li><Link to="">My Toys</Link></li>
+                        {user ? <li><Link to="/myToy">My Toys</Link></li>
                             : ''}
-                        {user ? <li><Link to="">Add Toys</Link></li> : ''}
-                        <li><Link to="">Blogs</Link></li>
+                        {user ? <li><Link to="/addToy">Add Toys</Link></li> : ''}
+                        <li><Link to="/blogs">Blogs</Link></li>
                     </ul>
                 </div>
                 <Link to="/">
@@ -37,10 +37,10 @@ const NavigationBar = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/allToys">All Toys</Link></li>
-                    {user ? <li><Link to="">My Toys</Link></li> :
+                    {user ? <li><Link to="/myToy">My Toys</Link></li> :
                         ''}
-                    <li><Link to="">Add Toys</Link></li>
-                    <li><Link to="">Blogs</Link></li>
+                    <li><Link to="/addToy">Add Toys</Link></li>
+                    <li><Link to="/blogs">Blogs</Link></li>
                 </ul>
             </div>
             <div className="navbar-end">
