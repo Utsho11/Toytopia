@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 const AllToyCard = ({toy}) => {
-    const {toy_name,seller,price,picture,quantity,sub_category}=toy;
+    const {_id,toy_name,seller,price,picture,quantity,sub_category}=toy;
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -15,7 +16,9 @@ const AllToyCard = ({toy}) => {
                             <p>{quantity}</p>
                             <p>{price}</p>
                             <div className="card-actions">
+                                <Link to={`/allToys/${_id}`}>
                                 <button className="btn btn-primary">View detail</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,6 @@ import CategoryCard from './CategoryCard';
 
 const Category = () => {
     const [toys, setToys] = useState();
-    const one = '64671246efe016ae66ea9f47'
     useEffect(() =>{
         fetch('http://localhost:5000/allToys')
         .then(res => res.json())
