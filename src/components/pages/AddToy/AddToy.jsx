@@ -1,5 +1,6 @@
 import { Container } from 'postcss';
 import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 const AddToy = () => {
     const handleAddToy = event =>{
@@ -7,13 +8,30 @@ const AddToy = () => {
         const form = event.target;
         const seller = form.seller.value;
         const email = form.email.value;
-        const toyName = form.toyName.value;
-        const photo = form.photo.value;
+        const toy_name = form.toyName.value;
+        const picture = form.photo.value;
         const price = form.price.value;
         const rating = form.rating.value;
         const quantity = form.quantity.value;
-        const category = form.category.value;
+        const sub_category = form.category.value;
         const description = form.description.value;
+        const addedToy = {
+            picture, price, seller, toy_name, quantity, sub_category, description, rating,email
+        }
+        console.log(addedToy);
+        fetch('http://localhost:5000/allToys',{
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body : JSON.stringify(addedToy)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                toast("Add toy successfully")
+            }
+        })
     }
     return (
         <form onSubmit={handleAddToy}>
@@ -79,6 +97,11 @@ const AddToy = () => {
             <div className='text-center mb-4'>
                 <input className='btn btn-outline' type="submit" value="Submit" />
             </div>
+            <div className="toast toast-top toast-end">
+                  <div>
+                    <ToastContainer  className="alert alert-success"></ToastContainer>
+                  </div>
+                </div>
         </form>
     );
 };

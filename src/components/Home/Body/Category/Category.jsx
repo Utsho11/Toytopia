@@ -11,8 +11,8 @@ const Category = () => {
     },[])
     if(toys){
         const avengersSlicedData = toys.slice(0,2);
-        const starWarSlicedData  = toys.slice(11,13);
-        const transformersSlicedData = toys.slice(21,23);
+        const starWarSlicedData  = toys.slice(5,7);
+        const transformersSlicedData = toys.slice(10,12);
     
     return (
         <Tabs className="text-center">
