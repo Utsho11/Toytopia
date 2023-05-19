@@ -1,0 +1,64 @@
+import React, { useEffect, useState } from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import CategoryCard from './CategoryCard';
+
+const Category = () => {
+    const [toys, setToys] = useState();
+    const one = '64671246efe016ae66ea9f47'
+    useEffect(() =>{
+        fetch('http://localhost:5000/allToys')
+        .then(res => res.json())
+        .then(data => setToys(data))
+    },[])
+    if(toys){
+        const avengersSlicedData = toys.slice(0,2);
+        const starWarSlicedData  = toys.slice(11,13);
+        const transformersSlicedData = toys.slice(21,23);
+    
+    return (
+        <Tabs className="text-center">
+            <div className='flex justify-center'>
+            <TabList className="tabs">
+                <Tab className="tab tab-bordered">Avengers</Tab>
+                <Tab className="tab tab-bordered">Star Wars</Tab>
+                <Tab className="tab tab-bordered">Transformers</Tab>
+            </TabList>
+            </div>
+
+            <TabPanel className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                
+                    {
+                        avengersSlicedData.map(toy =>
+                        <CategoryCard
+                        key={toy._id}
+                        toy={toy}>                            
+                        </CategoryCard>
+                        )
+                    }
+    
+            </TabPanel>
+            <TabPanel className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            {
+                        starWarSlicedData.map(toy =>
+                        <CategoryCard
+                        key={toy._id}
+                        toy={toy}>                            
+                        </CategoryCard>
+                        )
+                    }
+            </TabPanel>
+            <TabPanel className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            {
+                        transformersSlicedData.map(toy =>
+                        <CategoryCard
+                        key={toy._id}
+                        toy={toy}>                            
+                        </CategoryCard>
+                        )
+                    }
+            </TabPanel>
+        </Tabs>
+    );}
+};
+
+export default Category;
