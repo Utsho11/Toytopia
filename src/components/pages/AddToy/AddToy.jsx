@@ -34,7 +34,9 @@ const AddToy = () => {
         })
     }
     return (
-        <form onSubmit={handleAddToy}>
+        <div>
+            <h1 className='text-white text-5xl text-center font-bold my-4 first-letter: first-letter:'>ADD A TOY</h1>
+            <form onSubmit={handleAddToy}>
             <div className='grid lg:grid-cols-2 mx-auto'>
             <div className="form-control my-4 mx-auto">
                 <label className="input-group input-group-md">
@@ -103,6 +105,7 @@ const AddToy = () => {
                   </div>
                 </div>
         </form>
+        </div>
     );
 };
 

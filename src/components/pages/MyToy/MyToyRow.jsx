@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 const MyToyRow = ({ myToy, handleDelete }) => {
 
     const { _id, picture, price, seller, toy_name, quantity, sub_category, rating, email } = myToy;

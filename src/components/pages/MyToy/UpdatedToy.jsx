@@ -4,6 +4,8 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const UpdatedToy = () => {
 
+    
+
     const toy = useLoaderData();
     const {_id,picture,toy_name,seller,price,quantity,sub_category,email,rating} = toy;
 
@@ -40,7 +42,9 @@ const UpdatedToy = () => {
     }
 
     return (
-        <form onSubmit={handleUpdatedToy}>
+       <div>
+        <h1 className='text-white text-5xl text-center font-bold my-4 first-letter: first-letter:'>Update Information</h1>
+         <form onSubmit={handleUpdatedToy}>
             <div className='grid lg:grid-cols-2 mx-auto'>
             <div className="form-control my-4 mx-auto">
                 <label className="input-group input-group-md">
@@ -109,6 +113,7 @@ const UpdatedToy = () => {
                   </div>
                 </div>
         </form>
+       </div>
     );
 };
 

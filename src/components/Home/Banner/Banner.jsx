@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Banner = () => {
+    useEffect(() => {
+        AOS.init({
+            offset: 200,
+            duration: 800,
+            easing: 'ease-in-sine',
+            delay: 100,
+        });
+    }, [])
+
     return (
         <div className="hero min-h-screen bg-transparent text-white my-4 mx-4">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div data-aos="fade-up" className="hero-content flex-col lg:flex-row-reverse">
                 <img src="https://www.ubuy.com.bd/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNTF1VUd1LUFrZEwuX1NTNDAwXy5qcGc.jpg" className="w-full rounded-lg shadow-2xl" />
                 <div>
                     <h1 className="text-7xl font-bold my-12">Grab your toys</h1>
