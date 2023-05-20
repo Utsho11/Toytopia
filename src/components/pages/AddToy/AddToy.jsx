@@ -19,7 +19,7 @@ const AddToy = () => {
             picture, price, seller, toy_name, quantity, sub_category, description, rating,email
         }
         console.log(addedToy);
-        fetch('http://localhost:5000/allToys',{
+        fetch('https://toy-shop-server-eight.vercel.app/allToys',{
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

@@ -7,7 +7,7 @@ import 'aos/dist/aos.css';
 const Category = () => {
     const [toys, setToys] = useState();
     useEffect(() => {
-        fetch('http://localhost:5000/allToys')
+        fetch('https://toy-shop-server-eight.vercel.app/allToys')
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
