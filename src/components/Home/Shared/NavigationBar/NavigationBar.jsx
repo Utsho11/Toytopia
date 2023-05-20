@@ -22,7 +22,7 @@ const NavigationBar = () => {
             })
     }
     return (
-        <div className="navbar bg-base-100 h-32">
+        <div style={{backgroundColor: "black"}} className="navbar bg-transparent h-32">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

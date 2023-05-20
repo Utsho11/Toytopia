@@ -15,12 +15,12 @@ const Category = () => {
         const transformersSlicedData = toys.slice(10,12);
     
     return (
-        <Tabs className="text-center">
+        <Tabs className="text-center text-white mx-4 my-8">
             <div className='flex justify-center'>
             <TabList className="tabs">
-                <Tab className="tab tab-bordered">Avengers</Tab>
-                <Tab className="tab tab-bordered">Star Wars</Tab>
-                <Tab className="tab tab-bordered">Transformers</Tab>
+                <Tab className="tab tab-bordered text-white">Avengers</Tab>
+                <Tab className="tab tab-bordered text-white">Star Wars</Tab>
+                <Tab className="tab tab-bordered text-white">Transformers</Tab>
             </TabList>
             </div>
 

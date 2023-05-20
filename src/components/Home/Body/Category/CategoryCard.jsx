@@ -5,7 +5,7 @@ const CategoryCard = ({toy}) => {
     const {_id,toy_name,price,picture,rating}=toy;
     return (
         <div>
-            <div className="card w-full bg-base-100 shadow-xl">
+            <div className="card w-full bg-transparent shadow-xl rounded">
                         <figure className="px-10 pt-10">
                             <img style={{width: '304px',height: '304px'}} src={picture} className="rounded-xl" />
                         </figure>
