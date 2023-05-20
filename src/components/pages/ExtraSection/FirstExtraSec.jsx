@@ -1,10 +1,12 @@
 import React from 'react';
 import { FaPlaneDeparture, FaGift, FaPhoneAlt } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const FirstExtraSec = () => {
     return (
         <div className='grid lg:grid-cols-3'>
-            <div className="card w-96 bg-base-100 shadow-xl mx-4 my-4">
+            <div data-aos="fade-right" className="card w-96 bg-base-100 shadow-xl mx-4 my-4">
                 <div className="card-body">
                     <div className='flex justify-center gap-4'>
                     <FaPlaneDeparture style={{color: "#2cd7df"}} className='text-5xl'></FaPlaneDeparture>
@@ -15,7 +17,7 @@ const FirstExtraSec = () => {
                     </div>
                 </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl mx-4 my-4">
+            <div  data-aos="fade-up" className="card w-96 bg-base-100 shadow-xl mx-4 my-4">
                 <div className="card-body">
                     <div className='flex justify-center gap-4'>
                     <FaPhoneAlt style={{color: "#2cd7df"}} className='text-5xl'></FaPhoneAlt>
@@ -26,7 +28,7 @@ const FirstExtraSec = () => {
                     </div>
                 </div>
             </div>
-            <div className="card w-96 bg-base-100 shadow-xl mx-4 my-4">
+            <div  data-aos="fade-left" className="card w-96 bg-base-100 shadow-xl mx-4 my-4">
                 <div className="card-body">
                     <div className='flex justify-center gap-4'>
                     <FaGift style={{color: "#2cd7df"}} className='text-5xl'></FaGift>
