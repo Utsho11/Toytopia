@@ -34,6 +34,7 @@ const MyToy = () => {
         }
     }
 
+
     return (
         <div className="overflow-x-auto w-full">
             <table className="table w-full">
@@ -49,8 +50,8 @@ const MyToy = () => {
                         <th>price</th>
                         <th>quantity</th>
                         <th>rating</th>
-                        <th></th>
-                        <th></th>
+                        <th>Update</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>                

@@ -1,10 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider/AuthProvider';
 
 const NavigationBar = () => {
 
     const { user, logOut } = useContext(AuthContext);
+
+    const handleMouseOver = () => {
+        setShowContent(true);
+    };
+
+    const handleMouseOut = () => {
+        setShowContent(false);
+    };
 
     const handleLogOut = () => {
         logOut()
@@ -30,7 +38,7 @@ const NavigationBar = () => {
                     </ul>
                 </div>
                 <Link to="/">
-                <img src="https://i.ibb.co/PQZSJNv/flg-logo6387.png" className='w-40' />
+                    <img src="https://i.ibb.co/PQZSJNv/flg-logo6387.png" className='w-40' />
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -44,11 +52,18 @@ const NavigationBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {user ? <div className="avatar">
-                    <div className="w-14 me-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                    </div>
-                </div> : ''}
+                {user ? 
+                 <div className="relative mr-3">
+                 <img
+                   src={user?.photoURL}
+                   alt="Your Image"
+                   className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+                 />
+                 <div className="absolute left-0 right-0 top-0 p-4 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                   {/* Content to display on mouseover */}
+                   <p className="bg-white text-black absolute top-24 rounded">{user?.displayName}</p>
+                 </div>
+               </div> : ''}
                 {user ? <button onClick={handleLogOut} className="btn btn-outline">Log out</button> :
                     <button className="btn btn-outline"><Link to="/signIn">Sign in</Link></button>}
             </div>

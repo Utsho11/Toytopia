@@ -1,11 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext)
   const [show, setShow] = useState();
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSignUp = event => {
     event.preventDefault();
@@ -14,13 +17,16 @@ const SignUp = () => {
     const email = form.email.value;
     const photo = form.photo.value;
     const password = form.password.value;
+    const from = location.state?.from?.pathname || '/';
 
     console.log(email, name, password);
-    createUser(email, password)
+    createUser(email, password,name,photo)
       .then(result => {
         const user = result.user;
         form.reset();
-        toast("Sign up successfully")
+        console.log(user);
+        toast("Sign up successfully");
+        navigate(from,{replace: true})
       })
       .then(error => {
         console.log(error);
@@ -34,7 +40,7 @@ const SignUp = () => {
   }
   return (
     <div style={{ backgroundImage: "url('https://e0.pxfuel.com/wallpapers/667/98/desktop-wallpaper-login-background-outlook-login.jpg')" }} className="hero min-h-screen bg-transparent">
-      <div className="hero-content">
+      <div className="hero-content w-1/2">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent">
           <form onSubmit={handleSignUp}>
             <div className="card-body">

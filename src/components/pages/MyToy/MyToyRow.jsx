@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 const MyToyRow = ({ myToy, handleDelete }) => {
 
     const { _id, picture, price, seller, toy_name, quantity, sub_category, rating, email } = myToy;
@@ -23,9 +24,10 @@ const MyToyRow = ({ myToy, handleDelete }) => {
             <td>{quantity}</td>
             <td>{rating}</td>
             <td>
-                <button onClick={() => handleDelete(_id)} className="btn btn-circle">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
+                <Link to={`/updatedToy/${_id}`}><label htmlFor="my-modal-6" className="btn btn-outline btn-xs">update</label></Link>
+            </td>
+            <td>
+                <button onClick={() => handleDelete(_id)} className="btn btn-outline btn-xs"><small>Delete</small></button>
             </td>
         </tr>
     );
