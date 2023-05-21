@@ -7,6 +7,8 @@ import { GoogleAuthProvider } from 'firebase/auth';
 const SignIn = () => {
   const { signIn, logInWithGoogle } = useContext(AuthContext);
   const [show, setShow] = useState();
+  const [error, setError] = useState(); 
+
   const googleProvider = new GoogleAuthProvider();
   const navigate = useNavigate();
   const location = useLocation();
@@ -18,6 +20,8 @@ const SignIn = () => {
     const password = form.password.value;
     const from = location.state?.from?.pathname || '/';
 
+    setError('')
+
     signIn(email, password)
       .then(result => {
         const user = result.user;
@@ -26,7 +30,8 @@ const SignIn = () => {
         toast("Log in successfully");
         navigate(from, { replace: true });
       })
-      .then(error => {
+      .catch(error => {
+        setError(error.message);
         console.log(error);
       })
   }
@@ -38,8 +43,8 @@ const SignIn = () => {
         toast("Log in successfully");
         navigate(from, { replace: true });
       })
-      .catch(error => {
-        console.log('error', error.message);
+      .then(error => {
+        console.log('error', error);
       })
 
   }
@@ -49,7 +54,7 @@ const SignIn = () => {
   }
   return (
     <div style={{ backgroundImage: "url('https://e0.pxfuel.com/wallpapers/667/98/desktop-wallpaper-login-background-outlook-login.jpg')" }} className="hero min-h-screen bg-transparent">
-      <div className="hero-content w-1/2">
+      <div className="hero-content w-full">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent">
           <form onSubmit={handleSignIn}>
             <div className="card-body pb-0">
@@ -75,6 +80,7 @@ const SignIn = () => {
                   </p>
                 </label>
               </div>
+                  <p><b className='text-red-600'>{error}</b></p>
               <div className="form-control mt-6">
                 <button className="btn btn-primary my-3">Login</button>
                 <div className="toast toast-top toast-end">

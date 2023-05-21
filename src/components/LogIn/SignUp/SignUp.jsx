@@ -7,6 +7,7 @@ const SignUp = () => {
   const { createUser } = useContext(AuthContext)
   const [show, setShow] = useState();
 
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -28,7 +29,7 @@ const SignUp = () => {
         toast("Sign up successfully");
         navigate(from,{replace: true})
       })
-      .then(error => {
+      .catch(error => {
         console.log(error);
       })
 
@@ -40,10 +41,10 @@ const SignUp = () => {
   }
   return (
     <div style={{ backgroundImage: "url('https://e0.pxfuel.com/wallpapers/667/98/desktop-wallpaper-login-background-outlook-login.jpg')" }} className="hero min-h-screen bg-transparent">
-      <div className="hero-content w-1/2">
+      <div className="hero-content w-full">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent">
-          <form onSubmit={handleSignUp}>
-            <div className="card-body">
+          <form  onSubmit={handleSignUp}>
+            <div className="card-body w-full">
               <label className='label'>
                 <h1 className="text-5xl font-bold">Register now</h1>
               </label>
