@@ -57,11 +57,11 @@ const NavigationBar = () => {
                  <img
                    src={user?.photoURL}
                    alt="Your Image"
-                   className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+                   className="w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
                  />
                  <div className="absolute left-0 right-0 top-0 p-4 opacity-0 hover:opacity-100 transition-opacity duration-300">
                    {/* Content to display on mouseover */}
-                   <p className="bg-white text-black absolute top-24 rounded">{user?.displayName}</p>
+                   <p className="font-semibold w-40 text-white absolute top-16 rounded">{user?.displayName}</p>
                  </div>
                </div> : ''}
                 {user ? <button onClick={handleLogOut} className="btn btn-outline btn-sm">Log out</button> :
