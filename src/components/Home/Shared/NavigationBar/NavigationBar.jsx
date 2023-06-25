@@ -22,7 +22,7 @@ const NavigationBar = () => {
             })
     }
     return (
-        <div style={{backgroundColor: "black"}} className="navbar bg-transparent h-32">
+        <div className="navbar bg-gradient-to-r from-gray-950 to-blue-500 text-white h-32 pr-12">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -38,7 +38,7 @@ const NavigationBar = () => {
                     </ul>
                 </div>
                 <Link to="/">
-                    <img src="https://i.ibb.co/PQZSJNv/flg-logo6387.png" className='w-40' />
+                    <img src="https://i.ibb.co/QjDVQX3/Screenshot-2023-06-25-134451-removebg-preview.png" className='w-40 rounded-full' />
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -64,8 +64,8 @@ const NavigationBar = () => {
                    <p className="bg-white text-black absolute top-24 rounded">{user?.displayName}</p>
                  </div>
                </div> : ''}
-                {user ? <button onClick={handleLogOut} className="btn btn-outline">Log out</button> :
-                    <button className="btn btn-outline"><Link to="/signIn">Sign in</Link></button>}
+                {user ? <button onClick={handleLogOut} className="btn btn-outline btn-sm">Log out</button> :
+                    <button className="btn btn-outline btn-sm text-white"><Link to="/signIn">Sign in</Link></button>}
             </div>
         </div>
     );

@@ -53,30 +53,31 @@ const SignIn = () => {
     setShow(event.target.checked)
   }
   return (
-    <div style={{ backgroundImage: "url('https://e0.pxfuel.com/wallpapers/667/98/desktop-wallpaper-login-background-outlook-login.jpg')" }} className="hero min-h-screen bg-transparent">
+    <div className="hero min-h-screen bg-transparent">
       <div className="hero-content w-full">
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent">
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
           <form onSubmit={handleSignIn}>
-            <div className="card-body pb-0">
+            <div className="card-body pb-0 text-white">
               <label className='label'>
                 <h1 className="text-5xl font-bold">Login now</h1>
               </label>
+              <hr />
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text text-white font-semibold">Email</span>
                 </label>
                 <input type="email" name='email' placeholder="Enter email" className="input input-bordered bg-transparent" required />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text text-white font-semibold">Password</span>
                 </label>
 
                 <input type={show ? "text" : "password"} name='password' placeholder="Enter password" className="input input-bordered bg-transparent" required />
 
                 <label className="label">
                   <p>
-                    <input onClick={handleShowPass} type="checkbox" name="show-password" id="" /> <span className="label-text my-auto">Show password</span>
+                    <input onClick={handleShowPass} type="checkbox" name="show-password" id="" /> <span className="label-text my-auto text-white font-semibold">Show password</span>
                   </p>
                 </label>
               </div>

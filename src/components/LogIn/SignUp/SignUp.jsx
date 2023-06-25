@@ -40,7 +40,7 @@ const SignUp = () => {
     setShow(event.target.checked)
   }
   return (
-    <div style={{ backgroundImage: "url('https://e0.pxfuel.com/wallpapers/667/98/desktop-wallpaper-login-background-outlook-login.jpg')" }} className="hero min-h-screen bg-transparent">
+    <div className="hero min-h-screen bg-transparent text-white">
       <div className="hero-content w-full">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent">
           <form  onSubmit={handleSignUp}>
@@ -50,30 +50,30 @@ const SignUp = () => {
               </label>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text text-white">Name</span>
                 </label>
-                <input type="text" name='name' placeholder="Enter name" className="input input-bordered bg-transparent" required />
+                <input type="text" name='name' placeholder="Enter name" className="input input-bordered bg-transparent border-gray-50" required />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text text-white">Email</span>
                 </label>
-                <input type="email" name='email' placeholder="Enter email" className="input input-bordered bg-transparent" required />
+                <input type="email" name='email' placeholder="Enter email" className="input input-bordered bg-transparent border-gray-50" required />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Photo URL</span>
+                  <span className="label-text text-white">Photo URL</span>
                 </label>
-                <input type="text" name='photo' placeholder="Enter Photo URL" className="input input-bordered bg-transparent" />
+                <input type="text" name='photo' placeholder="Enter Photo URL" className="input input-bordered bg-transparent border-gray-50" />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text text-white">Password</span>
                 </label>
-                <input type={show ? "text" : "password"} name='password' placeholder="Enter password" className="input input-bordered bg-transparent" required />
+                <input type={show ? "text" : "password"} name='password' placeholder="Enter password" className="input input-bordered bg-transparent border-gray-50" required />
                 <label className="label">
                   <p>
-                    <input onClick={handleShowPass} type="checkbox" name="show-password" id="" /> <span className="label-text my-auto">Show password</span>
+                    <input onClick={handleShowPass} type="checkbox" name="show-password" id="" /> <span className="label-text my-auto text-white border-gray-50">Show password</span>
                   </p>
                 </label>
               </div>

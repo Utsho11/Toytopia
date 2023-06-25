@@ -16,19 +16,19 @@ const AllToyCard = ({ toy }) => {
     }, [])
     return (
         <div>
-            <div data-aos="fade-up" className="card w-96 bg-base-100 shadow-xl">
+            <div data-aos="fade-up" className="card w-96 bg-transparent text-white shadow-xl">
                 <figure className="px-10 pt-10">
                     <img style={{ width: '304px', height: '304px' }} src={picture} className="rounded-xl" />
                 </figure>
-                <div className="card-body items-center text-center">
+                <div className="card-body items-center text-center text-white">
                     <h2 className="card-title">{toy_name}</h2>
                     <p>Category: {sub_category}</p>
                     <p>Seller: {seller}</p>
                     <p>Quantity:{quantity}</p>
-                    <p>Price: ${price}</p>
+                    <p className='text-yellow-400 font-semibold'>Price: ${price}</p>
                     <div className="card-actions">
                         <Link to={`/allToys/${_id}`}>
-                            <button className="btn btn-primary">View detail</button>
+                            <button className="btn btn-dark btn-outline text-white">View detail</button>
                         </Link>
                     </div>
                 </div>

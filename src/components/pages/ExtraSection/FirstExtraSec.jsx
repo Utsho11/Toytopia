@@ -5,35 +5,35 @@ import 'aos/dist/aos.css';
 
 const FirstExtraSec = () => {
     return (
-        <div className='grid lg:grid-cols-3'>
+        <div className='grid text-white lg:grid-cols-3'>
             <div data-aos="fade-right" className="card w-96 bg-base-100 shadow-xl mx-4 my-4">
-                <div className="card-body">
+                <div className="card-body bg-gradient-to-r from-blue-950 to-blue-500">
                     <div className='flex justify-center gap-4'>
-                    <FaPlaneDeparture style={{color: "#2cd7df"}} className='text-5xl'></FaPlaneDeparture>
+                    <FaPlaneDeparture className='text-5xl'></FaPlaneDeparture>
                     <div>
-                        <h1 className='text-3xl font-bold text-white'>Free Shipping</h1>
+                        <h1 className='text-3xl font-bold'>Free Shipping</h1>
                         <p><small>on orders over $35</small></p>
                     </div>
                     </div>
                 </div>
             </div>
             <div  data-aos="fade-up" className="card w-96 bg-base-100 shadow-xl mx-4 my-4">
-                <div className="card-body">
+                <div className="card-body bg-gradient-to-r from-blue-950 to-blue-500">
                     <div className='flex justify-center gap-4'>
-                    <FaPhoneAlt style={{color: "#2cd7df"}} className='text-5xl'></FaPhoneAlt>
+                    <FaPhoneAlt className='text-5xl'></FaPhoneAlt>
                     <div>
-                        <h1 className='text-3xl font-bold text-white'>Premium Support</h1>
+                        <h1 className='text-3xl font-bold'>Premium Support</h1>
                         <p><small>24/7 including holiday</small></p>
                     </div>
                     </div>
                 </div>
             </div>
             <div  data-aos="fade-left" className="card w-96 bg-base-100 shadow-xl mx-4 my-4">
-                <div className="card-body">
+                <div className="card-body bg-gradient-to-r from-blue-950 to-blue-500">
                     <div className='flex justify-center gap-4'>
-                    <FaGift style={{color: "#2cd7df"}} className='text-5xl'></FaGift>
+                    <FaGift className='text-5xl'></FaGift>
                     <div>
-                        <h1 className='text-3xl font-bold text-white'>Member Discount</h1>
+                        <h1 className='text-3xl font-bold'>Member Discount</h1>
                         <p><small>up to 30% off</small></p>
                     </div>
                     </div>

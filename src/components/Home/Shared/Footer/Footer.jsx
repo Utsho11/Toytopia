@@ -13,10 +13,10 @@ const Footer = () => {
     });
   }, [])
   return (
-    <footer data-aos="fade-up"  className="footer p-10 bg-base-200 text-base-content">
+    <footer data-aos="fade-up"  className="footer p-10 bg-gradient-to-r from-gray-950 to-blue-500 text-white">
       <div>
 
-        <img src="https://i.ibb.co/PQZSJNv/flg-logo6387.png" className='w-40' />
+        <img src="https://i.ibb.co/QjDVQX3/Screenshot-2023-06-25-134451-removebg-preview.png" className='w-40' />
         <span className='font-bold text-lg ms-8'>TOYTOPIA</span>
 
         <p>Toytopia Industries Ltd.<br />Providing reliable toys since 1992</p>
